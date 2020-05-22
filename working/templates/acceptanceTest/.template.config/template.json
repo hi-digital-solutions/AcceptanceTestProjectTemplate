@@ -4,7 +4,7 @@
     "classifications": [ "AcceptanceTests", "SpecFlow", "Functions", "WireMock" ],
     "identity": "AcceptanceTests",
     "name": "Acceptance Test project using SpecFlow, Azure Functions, and Wiremock",
-    "shortName": "AcceptanceTest",
+    "shortName": "acceptancetest",
     "tags": {
       "language": "C#",
       "type": "project"
