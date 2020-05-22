@@ -1,0 +1,12 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "author": "Ian Firkin",
+    "classifications": [ "AcceptanceTests", "SpecFlow", "WireMock" ],
+    "identity": "AcceptanceTests.Wiremock",
+    "name": "Acceptance Test project using SpecFlow and Wiremock",
+    "shortName": "AcceptanceTest",
+    "tags": {
+      "language": "C#",
+      "type": "item"
+    }
+  }
