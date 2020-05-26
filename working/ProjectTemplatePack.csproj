@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <PackageType>Template</PackageType>
-    <PackageVersion>1.0</PackageVersion>
+    <Import Project="Version.targets" />
     <PackageId>HIDigitalSolutions.Templates.ProjectTemplates</PackageId>
     <Title>Project Templates</Title>
     <Authors>HI Digital Solutions</Authors>

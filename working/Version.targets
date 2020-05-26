@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project 
+    xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+        <Target Name="GitVersion">
+        <PropertyGroup>
+            <!-- Dummy values allow dotnet restore to progress -->
+            <GitBaseVersionMajor>0</GitBaseVersionMajor>
+            <GitBaseVersionMinor>1</GitBaseVersionMinor>
+            <GitBaseVersionPatch>0</GitBaseVersionPatch>
+            <GitCommits>0</GitCommits>
+        </PropertyGroup>
+    </Target>
+    <Target Name="SetVersion" DependsOnTargets="GitVersion">
+        <PropertyGroup>
+            <PackageVersion Condition="'$(GitSemVerDashLabel)' == ''">$(GitBaseVersionMajor).$(GitBaseVersionMinor).$(GitBaseVersionPatch)</PackageVersion>
+            <AssemblyVersion>$(GitBaseVersionMajor).$(GitBaseVersionMinor).$(GitBaseVersionPatch)</AssemblyVersion>
+        </PropertyGroup>
+    </Target>
+</Project>
