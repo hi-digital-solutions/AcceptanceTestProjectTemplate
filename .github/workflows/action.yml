@@ -12,11 +12,16 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
+      - uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '3.1.100'
+          source-url: https://nuget.pkg.github.com/hi-digital-solutions/index.json
+        env:
+          NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
       - name: Create Package
         run: dotnet pack working/ --configuration Release
 
       - name: Upload Package
         if: startsWith(github.ref, 'refs/tags/')
-        env:
-          NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}  
-        run: dotnet nuget push working/bin/Release/*.nupkg --source=https://nuget.pkg.github.com/hi-digital-solutions/index.json --skip-duplicate --no-symbols true
+        run: dotnet nuget push working/bin/Release/*.nupkg --skip-duplicate --no-symbols true
