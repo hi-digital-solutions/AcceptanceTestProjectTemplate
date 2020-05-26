@@ -12,10 +12,21 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
+      - name: Setup .NET Core @ Latest
+        uses: actions/setup-dotnet@v1
+        with:
+          source-url: https://nuget.pkg.github.com/hids/index.json
+        env:
+          NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}  
+
+      - name: Build Package
+        run: dotnet build --configuration Release
+
       - name: Create Package
         run: dotnet pack working/ --configuration Release
 
       - name: Upload Package
+        if: startsWith(github.ref, 'refs/tags/')
         env:
           NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
         run: dotnet nuget push working/bin/Release/*.nupkg --skip-duplicate --no-symbols true
