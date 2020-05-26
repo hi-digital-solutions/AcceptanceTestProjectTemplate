@@ -1,8 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
+  <Import Project="Version.targets" />
+  
   <PropertyGroup>
     <PackageType>Template</PackageType>
-    <Import Project="Version.targets" />
     <PackageId>HIDigitalSolutions.Templates.ProjectTemplates</PackageId>
     <Title>Project Templates</Title>
     <Authors>HI Digital Solutions</Authors>
