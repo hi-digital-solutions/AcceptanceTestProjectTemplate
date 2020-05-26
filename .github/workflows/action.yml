@@ -1,0 +1,21 @@
+name: 'Acceptance Test Project Template'
+on: 
+  push:
+    tags:
+jobs:
+  build:
+    name: Build and deploy
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Create Package
+        run: dotnet pack working/ --configuration Release
+
+      - name: Upload Package
+        env:
+          NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        run: dotnet nuget push working/bin/Release/*.nupkg --skip-duplicate --no-symbols true
