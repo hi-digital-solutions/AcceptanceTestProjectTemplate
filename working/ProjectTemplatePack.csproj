@@ -8,9 +8,8 @@
     <Authors>HI Digital Solutions</Authors>
     <Description>Templates to use when creating an application for Adatum Corporation.</Description>
     <PackageTags>dotnet-new;templates;</PackageTags>
-
-    <TargetFramework>netstandard2.0</TargetFramework>
-
+    <RepositoryUrl>https://github.com/hi-digital-solutions/AcceptanceTestProjectTemplate</RepositoryUrl>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
     <IncludeContentInPack>true</IncludeContentInPack>
     <IncludeBuildOutput>false</IncludeBuildOutput>
     <ContentTargetFolders>content</ContentTargetFolders>
