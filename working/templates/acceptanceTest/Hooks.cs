@@ -10,7 +10,7 @@ namespace AcceptanceTests
     [Binding]
     public static class Hooks
     {
-        private static string functionDirectory = $"/build/DataEvents/bin/Release/netcoreapp3.1/";
+        private static string functionDirectory = $"/build/$PROJECT/bin/Release/netcoreapp3.1/";
         private static Process functionRuntime;
 
         public static FluentMockServer StubAPI;
@@ -67,7 +67,7 @@ namespace AcceptanceTests
                 UseShellExecute = false,
                 WorkingDirectory = functionDirectory
             };
-            
+
             var touch = new Process
             {
                 StartInfo = info
